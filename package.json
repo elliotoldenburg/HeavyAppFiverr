@@ -4,10 +4,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "EXPO_NO_TELEMETRY=1 expo start",
-    "build:web": "expo export --platform web",
-    "lint": "expo lint",
-    "ios": "expo run:ios"
+    "dev": "EXPO_NO_TELEMETRY=1 npx expo start",
+    "build:web": "npx expo export --platform web",
+    "lint": "npx expo lint",
+    "ios": "npx expo run:ios"
   },
   "dependencies": {
     "@expo-google-fonts/inter": "^0.2.3",
@@ -41,7 +41,7 @@
     "expo-system-ui": "~5.0.7",
     "expo-web-browser": "~14.1.6",
     "lodash": "^4.17.21",
-    "lucide-react-native": "^0.475.0",
+    "lucide-react-native": "^0.490.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-native": "0.79.2",

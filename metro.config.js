@@ -17,7 +17,4 @@ config.transformer.minifierConfig = {
   mangle: false // Disable name mangling
 };
 
-// Add TypeScript support
-config.resolver.sourceExts = ['jsx', 'js', 'ts', 'tsx', 'json'];
-
 module.exports = config;

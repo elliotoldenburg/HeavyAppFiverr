@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "EXPO_NO_TELEMETRY=1 npx expo start",
+    "start": "expo start",
     "build:web": "npx expo export --platform web",
     "lint": "npx expo lint",
     "ios": "npx expo run:ios"
@@ -44,7 +45,7 @@
     "lucide-react-native": "^0.294.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-native": "0.79.2",
+    "react-native": "0.72.6",
     "react-native-chart-kit": "^6.12.0",
     "react-native-gesture-handler": "~2.24.0",
     "react-native-reanimated": "~3.17.4",

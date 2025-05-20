@@ -2,9 +2,9 @@ import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/lib/supabase';
 
 export function useWorkoutProgress(exerciseId: string | null, timeRange: '4w' | '12w' | '24w' | '52w' | 'all' | 'cycle') {
-  return useQuery(
-    ['workoutProgress', exerciseId, timeRange],
-    async () => {
+  return useQuery({
+    queryKey: ['workoutProgress', exerciseId, timeRange],
+    queryFn: async () => {
       if (!exerciseId) return null;
       
       const { data: { user } } = await supabase.auth.getUser();
@@ -101,10 +101,6 @@ export function useWorkoutProgress(exerciseId: string | null, timeRange: '4w' | 
         return { data: progressData, cycleGoal: null, noDataMessage: null };
       }
     },
-    { 
-      staleTime: 5 * 60 * 1000, // 5 minutes
-      cacheTime: 30 * 60 * 1000, // 30 minutes
-      enabled: !!exerciseId,
-    }
-  );
+    enabled: !!exerciseId,
+  });
 }

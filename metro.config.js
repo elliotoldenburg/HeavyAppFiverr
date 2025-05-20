@@ -9,7 +9,7 @@ const config = getDefaultConfig(__dirname, {
 
 // Add support for webp files
 config.resolver.assetExts.push('webp');
-
+config.resolver.unstable_enablePackageExports = false;
 // Increase memory limit
 config.maxWorkers = 2; // Reduce number of workers
 config.transformer.minifierConfig = {

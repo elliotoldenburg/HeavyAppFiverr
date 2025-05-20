@@ -58,6 +58,8 @@ export default function RootLayout() {
 
   // Check auth status and determine initial route
   useEffect(() => {
+    if (!mounted) return;
+
     const checkAuth = async () => {
       try {
         // Set initial route to welcome screen by default
@@ -101,7 +103,7 @@ export default function RootLayout() {
       }
     };
 
-    if (mounted && (fontsLoaded || fontError)) {
+    if (fontsLoaded || fontError) {
       checkAuth();
       SplashScreen.hideAsync();
     }

@@ -23,7 +23,9 @@ export async function fetchLastWeight(): Promise<WeightEntry | null> {
 }
 
 export function useLastWeight() {
-  return useQuery(['lastWeight'], fetchLastWeight, {
+  return useQuery({
+    queryKey: ['lastWeight'],
+    queryFn: fetchLastWeight,
     staleTime: 5 * 60 * 1000, // 5 minutes
     cacheTime: 30 * 60 * 1000, // 30 minutes
     refetchOnWindowFocus: false,
